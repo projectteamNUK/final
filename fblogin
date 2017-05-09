@@ -4,9 +4,9 @@
         header("Location: index.php");
     }
 	$code = $_GET['code'];
-	$c_id = "215102608874853";
+	$c_id = "288870768208521";
 	$red_uri = "http://140.127.218.216:81/imfinal/fblogin.php";
-	$c_sec = "53a890ae4d052364ec4207177a2200ce";
+	$c_sec = "61265d55198222e34d10c34346d6d4e6";
 	$uri = "https://graph.facebook.com/oauth/access_token?client_id=".$c_id."&redirect_uri=".$red_uri."&client_secret=".$c_sec."&code=".$code;
 	$cont = file_get_contents($uri);
 	$acc_end = strpos($cont, "&");
