@@ -1,4 +1,3 @@
-#擷取網路，之後再修改
 <?php
 	session_start();
 	if(isset($_SESSION['USER'])){
