@@ -5,17 +5,10 @@
 	<title>旅遊網</title>
 </head>
 <body>
-<div class="container">
-		<div class="row">
-			<div class="p1">
-				
-			</div>
-			<div class="p2 center-align" id="lo">
-				<div style="height: 30%;">
-					
-				</div>
-				<h1 class="center-align">FOR FUN 旅行社</h1>
-				<h5 class="center-align">
+<div>
+			<div>
+				<h1>FOR FUN 旅行社</h1>
+				<h5>
 					<?php echo "他媽的垃圾旅遊網";?>
 				</h5><br/>
 				<a href="https://www.facebook.com/dialog/oauth?client_id=288870768208521&redirect_uri=http://140.127.218.156/travel/fblogin.php&scope=public_profile,user_friends">
@@ -23,7 +16,6 @@
 				</a><br/>
 				<a class="btn-large blue" href="manual.html">使用前請詳閱說明書</a>	
 			</div>
-		</div>
-	</div>
+</div>
 </body>
 </html>
