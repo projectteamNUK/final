@@ -34,29 +34,37 @@
 
 </head>
 <body>
-		<h4>歡迎使用Facebook登入</h4>
-		<?php
-			$tra_id = $_SESSION["U_ID"];
-			$tra_name = $_SESSION["U_NAME"];
-			echo "<img class='responsive-img circle' src='https://graph.facebook.com/$tra_id/picture?type=large'>";
-			echo "<p id='shname'>$tra_name</p>";
-		?>
-		<div>
-			<h5>設定基本資料</h5>
-		</div>
-		<form action="fbreg.php" method="POST" name="f" onsubmit="return check();">
-				<div>
-				<label for="uname">名字</label>
-				<?php 
-					$name = $_SESSION["U_NAME"];
-					echo "<input id='uname' type='text' class='validate' name='uname' value='$name' required='' onkeyup='setn()'>";
+<div class="container">
+	<div class="row">
+		<div class="center-align">
+			<div>
+				<h4>歡迎使用Facebook登入</h4>
+				<?php
+					$tra_id = $_SESSION["U_ID"];
+					$tra_name = $_SESSION["U_NAME"];
+					echo "<img class='responsive-img circle' src='https://graph.facebook.com/$tra_id/picture?type=large'>";
+					echo "<p id='shname'>$tra_name</p>";
 				?>
+				<div class="center-align">
+					<h5>設定基本資料</h5>
 				</div>
+				<form action="fbreg.php" method="POST" name="f" onsubmit="return check();">
+						<div>
+						<label for="uname">名字</label>
+						<?php 
+							$name = $_SESSION["U_NAME"];
+							echo "<input id='uname' type='text' class='validate' name='uname' value='$name' required='' onkeyup='setn()'>";
+						?>
+						</div>
 
-				<div>
-					<button class="btn waves-light" type="submit">送出</button>
-				</div>
-				<br/>
-		</form>
+						<div class="center-align">
+							<button class="btn waves-light" type="submit">送出</button>
+						</div>
+						<br/>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>
