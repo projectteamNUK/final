@@ -9,19 +9,14 @@
     $fri = ($fri->data);
 	if(isset($_POST['uname'])){
 		$id = $_SESSION['U_ID'];
-		$name = $_POST['name'];
-		$phone = $_POST['phone'];
-		$email = $_POST['email'];
+		$name = $_POST['uname'];
+		$phone = $_POST['uphone'];
+		$email = $_POST['uemail'];
 		$new_sql = "INSERT INTO member VALUES('$id', '$name', '$phone', '$email')";
 		if (mysqli_query($link, $new_sql)){
-			$final_msg = "設定成功!系統將自動回到首頁<br/>";
-			$_SESSION['USER'] = $id;
-			$_SESSION["U_NAME"] = $name;
-			$_SESSION["U_PHONE"] = $phone;
-			$_SESSION["U_EMAIL"] = $email;
-			$res = mysqli_query($link, $sql);
+			$message = "恭喜註冊成功!歡迎加入FOR FUN 旅遊網<br/>";
 		}else{
-			$final_msg = "設定失敗!請聯繫系統管理員或稍後再試";
+			$message = "註冊失敗!請聯繫系統管理員或稍後再試";
 		}
 	}
 ?>
@@ -30,41 +25,50 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>幹你娘旅遊網</title>
+<title>FOR FUN旅遊網</title>
 
 </head>
 <body>
-<div class="container">
-	<div class="row">
-		<div class="center-align">
-			<div>
-				<h4>歡迎使用Facebook登入</h4>
-				<?php
-					$tra_id = $_SESSION["U_ID"];
-					$tra_name = $_SESSION["U_NAME"];
-					echo "<img class='responsive-img circle' src='https://graph.facebook.com/$tra_id/picture?type=large'>";
-					echo "<p id='shname'>$tra_name</p>";
-				?>
-				<div class="center-align">
-					<h5>設定基本資料</h5>
-				</div>
-				<form action="fbreg.php" method="POST" name="f" onsubmit="return check();">
-						<div>
-						<label for="uname">名字</label>
-						<?php 
-							$name = $_SESSION["U_NAME"];
-							echo "<input id='uname' type='text' class='validate' name='uname' value='$name' required='' onkeyup='setn()'>";
-						?>
-						</div>
-
-						<div class="center-align">
-							<button class="btn waves-light" type="submit">送出</button>
-						</div>
-						<br/>
-				</form>
-			</div>
-		</div>
+	<h4>歡迎使用Facebook登入</h4>
+	<?php
+		$tra_id = $_SESSION["U_ID"];
+		$tra_name = $_SESSION["U_NAME"];
+		echo "<img class='responsive-img circle' src='https://graph.facebook.com/$tra_id/picture?type=large'>.<br>";
+		echo "$tra_name";
+	?>
+	<div>
+		<h5>加入會員</h5>
 	</div>
-</div>
+	<form action="fbreg.php" method="POST">
+			<div>
+			<label>名字</label>
+			<?php 
+				$name = $_SESSION["U_NAME"];
+				echo "<input id='uname' type='text' name='uname' value='$name'>";
+			?>
+			</div>
+			<div>
+			<label>電話</label>
+			<?php 
+				echo "<input id='uphone' type='text' name='uphone' value='$phone'>";
+			?>
+			</div>
+			<div>
+			<label>信箱</label>
+			<?php 
+				echo "<input id='uemail' type='text' name='uemail' value='$email'>";
+			?>
+			</div>
+
+			<div>
+				<button type="submit">送出</button>
+	<?php
+		if(isset($message)){
+			echo "<div>$message</div>";
+			header("Refresh: 2; url=index.php");
+		}
+	?>
+			</div><br/>
+	</form>
 </body>
 </html>
