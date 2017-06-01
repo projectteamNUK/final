@@ -8,7 +8,7 @@
 			<h1>新增留言</h1>
 <?php
 
- $link=@mysqli_connect('localhost','root','a1043323','test1');
+ $link=@mysqli_connect('140.127.218.156','travel','tra1043342','comment');
  
  if(!isset($_POST['username']))
  		die("請由表單輸入");
@@ -22,7 +22,7 @@
  $datetime=new Datetime("now", new DateTimeZone('Asia/Taipei'));
  $posttime=$datetime->format('Y-m-d H:i:s');
  
- $sql2="INSERT INTO boardd(username,email,title1,content,ip,posttime) VALUES ('$username','$email','$title1','$content','$ip','$posttime');";
+ $sql2="INSERT INTO comment(comment_username,comment_email,comment_title,comment_content,comment_ip,comment_time) VALUES ('$username','$email','$title1','$content','$ip','$posttime');";
 
  mysqli_query($link,'SET NAMES utf8');
  mysqli_query($link,$sql2);

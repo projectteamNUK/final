@@ -1,6 +1,6 @@
 <?php
 
-if(!($_SESSION['username'])){
+if(!($_SESSION['comment_username'])){
 	?>
 	<script language=JavaScript>
 	window.alert('請輸入帳號');

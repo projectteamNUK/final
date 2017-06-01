@@ -42,8 +42,8 @@
 	include("board.php");
 	$loginname=mysqli_real_escape_string($link,$_POST['loginname']);
 	$userpassword=mysqli_real_escape_string($link,$_POST['password1']);
-	$login0="SELECT * FROM login WHERE username='$loginname'";
-	$login1=" and password='$userpassword'";
+	$login0="SELECT * FROM login WHERE login_username='$loginname'";
+	$login1=" and login_password='$userpassword'";
 	$logincheck=$login0.$login1;
 	$sql=mysqli_query($link,$logincheck);
 	$rows = @mysqli_num_rows($sql);
@@ -59,7 +59,7 @@
 	else
 	{
 		$list=mysqli_fetch_assoc($sql);
-		$_SESSION["username"]=$list['username'];
+		$_SESSION["comment_username"]=$list['username'];
 		header("Location:./adminindex.php");
 	}
 	?>

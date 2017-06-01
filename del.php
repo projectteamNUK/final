@@ -12,7 +12,7 @@ include("session1.php");
 <?php
 include("board.php");
 $id=mysqli_real_escape_string($link, $_GET['id']);
-$sql="delete from boardd where id=$id";
+$sql="delete from comment where comment_id=$id";
 mysqli_query($link,$sql) or die(mysqli_error($link));
 ?>
 <script language=JavaScript>

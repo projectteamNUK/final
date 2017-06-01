@@ -10,7 +10,7 @@
 <a href="insert.php">新增留言唷</a><br>
 <?php
 	include("board.php");
-	$sql="select id,username,email,title1,content from boardd";
+	$sql="select comment_id,member_id,comment_username,comment_email,comment_title,comment_content from comment";
 	$sql2=mysqli_query($link,$sql);
 	$rows=mysqli_num_rows($sql2);
 if($rows==""){
@@ -23,23 +23,23 @@ while($list3=mysqli_fetch_array($sql2)){
 <tr><td width="40%">
 留言者姓名:
 <?php
-if ($list3['email']!="")
+if ($list3['comment_email']!="")
 { ?>
-<a href="mailto:<?php echo $list3['email']; ?>">
-<?php echo $list3['username']; ?></a><?php  }
+<a href="mailto:<?php echo $list3['comment_email']; ?>">
+<?php echo $list3['comment_username']; ?></a><?php  }
 else
 { ?>
-<?php echo $list3['username']; ?>
+<?php echo $list3['comment_username']; ?>
 
 <?php
 } ?>
-</td><td width="60%">主題: <?php echo strip_tags($list3['title1']);?></td>
+</td><td width="60%">主題: <?php echo strip_tags($list3['comment_title']);?></td>
 	</tr><tr>
-<td colspan="2"><?php echo nl2br($list3['content']); ?></td>
+<td colspan="2"><?php echo nl2br($list3['comment_content']); ?></td>
 </tr><tr>
-<td><a href="edit.php?id=<?php echo $list3['id'];  ?>">編輯</a>
+<td><a href="edit.php?id=<?php echo $list3['comment_id'];  ?>">編輯</a>
 </td><td>
-<a href="del.php?id=<?php echo $list3['id'];  ?>"
+<a href="del.php?id=<?php echo $list3['comment_id'];  ?>"
 onclick="if(!confirm('注意:刪除後，無法救回喔!請再次確認是否刪除?')){return false;}">刪除</a>
 </td></tr></table><br>
 <?php
