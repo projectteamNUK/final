@@ -23,6 +23,7 @@
 		require_once("db_config.php");
 		session_start();
 		$_SESSION["U_ID"] = $tra_id;
+		$_SESSION["U_PWD"] = $tra_pwd;
 		$_SESSION["U_NAME"] = $tra_name;
 		$_SESSION["U_PHONE"] = $tra_phone;
 		$_SESSION["U_EMAIL"] = $tra_email;
@@ -34,6 +35,7 @@
 		}else{
 			$set = mysqli_fetch_array($res, MYSQLI_ASSOC);
 			$_SESSION["U_ID"] = $set['member_id'];
+			$_SESSION["U_PWD"] = $set['member_pwd'];
 			$_SESSION["U_NAME"] = $set['member_name'];
 			$_SESSION["U_PHONE"] = $set['member_phone'];
 			$_SESSION["U_EMAIL"] = $set['member_email'];

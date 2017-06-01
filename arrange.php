@@ -6,11 +6,11 @@
 		$price=$_POST['price'];
 		$arrange = "SELECT * FROM travel WHERE travel_type= '$place' and travel_traffic='$traffic' and travel_prcnum='$price'";
 		$arr= mysqli_query($link, $arrange);
-		$arrnum= mysql_num_rows($arr);
+		$arrnum= mysqli_num_rows($arr);
 		if ($arrnum > 0) {
 			$message = "搜尋成功!!<br/>";
 		}else{
-			$message = "查無資料!!請更換搜尋條件";
+			$nmessage = "查無資料!!請更換搜尋條件";
 		}
 	}
 ?>
@@ -28,7 +28,11 @@
 		session_start();
 		$tra_id = $_SESSION["U_ID"];
 		$tra_name = $_SESSION["U_NAME"];
-		echo "<img class='responsive-img circle' src='https://graph.facebook.com/$tra_id/picture?type=large'>.<br>";
+		if (strlen($tra_id) < 15) {
+					echo "<img class='responsive-img circle' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwx3XFW6qZsaqCpetRzX8KD1iEaSVQ265aQGq4foXJ2pMHOvUTZw'><br>";
+				}else{
+					echo "<img class='responsive-img circle' src='https://graph.facebook.com/$tra_id/picture?type=large'><br>";
+		}
 		echo "$tra_name";
 	?>
 	<div>
@@ -77,6 +81,7 @@
 				<?php
 					if(isset($message)){
 						echo "<div>$message</div>";
+						echo "共搜尋到 ".$arrnum." 筆";
 
 						echo "<tr>";
 						echo "<td>旅遊名稱</td>";

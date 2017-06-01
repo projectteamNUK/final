@@ -23,5 +23,6 @@
 			</tr>
 		</div>
 </table>
+<img src="https://getez.info/animation_photos/4547.gif" width="1500" height="700">
 </body>
 </html>

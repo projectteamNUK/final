@@ -20,12 +20,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>FOR FUN 旅遊網</title>
+
+<title>FOR FUN旅遊網</title>
+
 </head>
 <body>
-		<h1>FOR FUN 旅行社</h1>
-		<div>
-		<h2>會員登入 SIGN IN</h2>
+	<h4>歡迎使用一般登入</h4>
+	<div>
+		<h5>會員登入</h5>
 	</div>
 	<form action="basiclogin.php" method="POST">
 		<div>
@@ -42,25 +44,15 @@
 			?>
 		</div>
 		<div>
-			<button type="submit">登入</button>
+			<button type="submit">送出</button>
+			<button type="text"><a href="basicregistered.php">註冊</a></button>
 		</div>
 	</form>
-			<?php
-				if(isset($message)){
-					echo "<div>$message</div>";
-					header("Refresh: 2; url=index.php");
-				}
-			?>
-		<div>
-		<a href="https://www.facebook.com/dialog/oauth?client_id=288870768208521&redirect_uri=http://140.127.218.156/travel/fblogin.php&scope=public_profile,user_friends">
-		<img src="https://img.funtop.tw/2016/05/160514-fb-live-map/fb-live-map_2.png" width="200" height="200">
-		</a>
-		</div>
-
-		<div>
-		<a href="basicregistered.php">
-		<img src="https://img.shoplineapp.com/media/image_clips/5711083c6170693ff6305300/source.jpg?1460734011" width="200" height="200">
-		</a>
-		</div>
+	<?php
+		if(isset($message)){
+			echo "<div>$message</div>";
+			header("Refresh: 2; url=index.php");
+		}
+	?>
 </body>
 </html>
