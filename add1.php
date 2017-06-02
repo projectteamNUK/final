@@ -8,7 +8,7 @@
 			<h1>新增留言</h1>
 <?php
 
- $link=@mysqli_connect('140.127.218.156','travel','tra1043342','comment');
+ $link=@mysqli_connect('140.127.218.156','travel','tra1043342','travel');
  
  if(!isset($_POST['username']))
  		die("請由表單輸入");
