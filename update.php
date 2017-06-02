@@ -27,7 +27,7 @@ $posttime=$datetime->format('Y-m-d H:i:s');
 $a="comment_username='$username',comment_email='$email',comment_title='$title1',";
 $b="comment_content='$content',comment_ip='$ip',comment_time='$posttime'";
 $c=$a.$b;
-$sql="update boardd set $c where id=$id";
+$sql="update comment set $c where id=$id";
 mysqli_query($link,$sql) or die(mysqli_error($link));
 
 ?>
