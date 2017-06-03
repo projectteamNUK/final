@@ -7,7 +7,11 @@
 <body>
 <a href="insert.php">新增留言</a><br>
 <?php
-	include("board.php");
+	$link= @mysqli_connect(
+    '140.127.218.156',
+    'travel',
+    'tra1043342',
+    'travel');
 	$sql = "select comment_username,comment_email,comment_title,comment_content from comment";
 	$sql2=mysqli_query($link , $sql);
 	$rows=@mysqli_num_rows($sql2);
