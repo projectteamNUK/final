@@ -22,6 +22,13 @@
 			$message2 = "更新失敗!!請稍後再試";
 		}
     }
+    if (isset($_GET["id"])) {
+    	$DELETE ="DELETE FROM favorite WHERE travel_id='".$_GET["id"]."' AND member_id = '$mem_id'" ;
+    	if (mysqli_query($link,$DELETE)) {
+    		mysqli_close($link);
+        	header("Location: member.php");
+    	}
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,6 +58,9 @@
 						<li><a href="#" id="l">簡介</a></li>
 						<div class="login1">
  						   <div class="login-wrapper1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">  						   
+
  						        <h2>值得你信任的旅遊網-否放旅遊網</h2>
  						        <h3>成立理念</h3>
  						        <p>現今網路資訊發展越來越蓬勃，使用網路查詢資料已成為趨勢。
@@ -63,7 +73,6 @@
 藉由這個留言板，我們可以去傾聽顧客的聲音，了解顧客對每次旅遊的看法理念及意見，吸收每個意見問題，當作養分去創造更高品質的旅遊方案。</p>
    							</div>
  						</div>
-						<li><a href="arrange.php">行程安排</a></li>
 						<li><a href="#">旅遊資訊</a>
 							<ul>
 								<li><a href="synopsis_n.php">北部</a></li>
@@ -72,17 +81,32 @@
 								<li><a href="synopsis_s.php">南部</a></li>
 							</ul>
 						</li>
-								<li><a href='member.php'>會員專區</a></li>;
-								<li><a href='#'>聯絡我們</a></li>;
+						<li><a href="arrange.php">行程安排</a></li>
+						
+								<li><a href='member.php'>會員專區</a></li>
+								<li><a href='#' id="contact">聯絡我們</a></li>
 						<div class="login2">
  						   <div class="login-wrapper2">
-								<div class="click"><p>　發表意見　</p></div>
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">  						   
+								<div class="click"><p>發表意見</p></div>
 								<div class="wrap">
-									<div class=happy>主旨：<input type="text" name="" ><br></div>
-									<div class=happy>意見內容：<textarea rows="15" cols="50" name="con1"></textarea></div><br>
-									<button type="submit" class="submit">提交</button>
-   								</div>
+									<form action="contact.php" method="POST">
+									        <div class="happy">意見類型：<select name="type" required="" id="type" class="fuck">
+									            <option value='旅遊諮詢'>旅遊諮詢</option>
+									            <option value='景點推薦'>景點推薦</option>
+									            <option value='服務品質'>服務品質</option>
+									            <option value='網站刊物'>網站刊物</option>
+									            <option value='其他'>其他</option>
+									        </select><br></div>
+										<div class=happy>主旨　　：<input type="text" name="title"><br></div>
+										<div class=happy>意見內容：<textarea  name="content" rows="15" cols="50" name="con1"></textarea></div><br>
+									   	<input type="hidden" name="page" value="0">
+										<button type="submit" class="submit">提交</button>
+										</form>
  							</div>
+ 							</div>
+ 						</div>
 					</ul>
 						<div class="clear"></div>	
 					</div>
@@ -102,7 +126,7 @@
 									$tra_id = $_SESSION["U_ID"];
 									$tra_name = $_SESSION["U_NAME"];
 									if (strlen($tra_id) < 15) {
-										echo "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwx3XFW6qZsaqCpetRzX8KD1iEaSVQ265aQGq4foXJ2pMHOvUTZw'><br>";
+										echo "<img src='picture/head.png' width='225px' height='225px'><br>";
 									}else{
 										echo "<img src='https://graph.facebook.com/$tra_id/picture?type=large'><br>";
 									}
@@ -171,17 +195,16 @@
 							$rs=mysqli_fetch_row($data);
 					?>
 					<div class="travel_pic">
-					<img src='<?php echo $rs[10]?>' alt=''>
+					<a href="detail.php?id=<?php echo $rs[0] ?>"><img src="<?php echo $rs[10]?>" alt=""></a>
 					</div>
 					<div class="travel_word">
-
 						<h2><?php echo $rs[1]?></h2>
-
 						<p>出發日期：<?php echo $rs[3]?></p>
 						<p>結束日期：<?php echo $rs[4]?></p>
 						<p>交通方式：<?php echo $rs[5]?></p>
 						<p>旅遊行程：<?php echo $rs[6]?></p>
 						<p class="price">團費：<span>NT$<?php echo $rs[8]?>起</span></p>
+						 <button type="submit" class="delete_favorite"><a href="member.php?id=<?php echo $rs[0] ?>">刪除此收藏</a></button>							
 					</div>
 					<div class="clear"></div>
 					<?php }?>

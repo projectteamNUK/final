@@ -55,6 +55,17 @@ a{
   text-decoration: none;
 }
 
+.fucklove{
+  position: absolute;
+  width: 45px;
+  height: 40px;
+  right: 0px;
+  bottom: 30px;
+  cursor: pointer;
+}
+
+
+
 #back_to_top {
     position: fixed;
     bottom: 10px;
@@ -202,6 +213,7 @@ a{
   box-shadow:5px 5px 20px rgba(20%,20%,40%,0.5);
   position: relative;
     padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 .top{
@@ -359,7 +371,7 @@ background: rgba(0,0,0,.5);
 
 .normal_login_buttom{
   width: 300px;
-  height: 20px;
+  height: 30px;
   background-color: #999;
   color: #fff;
   margin: 0 auto;
@@ -380,7 +392,7 @@ background: rgba(0,0,0,.5);
 
 .normal_login_buttom:hover{
   width: 300px;
-  height: 20px;
+  height: 30px;
   background-color: #5B5B5B;
   color: #fff;
   margin: 0 auto;
@@ -626,6 +638,7 @@ background: rgba(0,0,0,.5);
   margin-bottom: 30px;
   margin-top: 30px;
   color: #000;
+  width:580px;
 }
 
 .travel_word h2:hover{
@@ -736,34 +749,111 @@ background: rgba(0,0,0,.5);
 }
 
 
+
 .happy{
-  margin-left: 30px;
+  /*margin-left: 30px;*/
   margin-top: 20px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.happy input{
+  border: 2px #91D04E solid;
+  border-radius: 5px;
+  font-family: '微軟正黑體';
+  height: 20px;
+  font-size:15px;
+}
+
+.happy textarea{
+  border: 2px #91D04E solid;
+  border-radius: 5px;
+  font-size:17px;
+  font-family: '微軟正黑體';
+}
+
+.fuck{
+  border: 2px #91D04E solid;
+  font-size: 15px;
+  font-family: '微軟正黑體';
+  border-radius: 5px;
+
 }
 
 .wrap{
-  border: 1px black solid;
-  width:600px;
+  border: 2px #FF5252 dashed;
+  width:540px;
   height: auto;
   margin: 0 auto;
+  padding-left: 60px;
+  margin-bottom: 30px;
+  padding-right: 60px;
 }
 
 .submit{
-color: #fff;
-margin-left: 275px;
-background-color: #000;
+  color: #fff;
+  margin-left: 350px;
+  margin-bottom: 30px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  border: 1px #FF5252 solid;
+  background-color: #FF5252;
+  font-family: '微軟正黑體';  
+  font-size: 20px;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+.submit:hover{
+  color: #000;
+  margin-left: 350px;
+  margin-bottom: 30px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  border: 1px #FFD9EC solid;
+  background-color: #FFD9EC;
+  font-family: '微軟正黑體';  
+  font-size: 20px;
+  border-radius: 5px;
+  cursor:pointer;
+  transition: all 0.5s;
 }
 
 .click{
-  background-color: black;
-  color:white;
-  width:170px;
+  width:140px;
   margin: 0 auto;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  border-radius: 5px;
+  background-color: #FF5252;
+  font-family: '微軟正黑體';
+  border: 1px #FF5252 solid;
+  color: #fff;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  cursor:pointer;
+
+}
+
+.click:hover{
+  width:140px;
+  margin: 0 auto;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  border-radius: 5px;
+  background-color: #FFD9EC;
+  font-family: '微軟正黑體';
+  border: 1px #FFD9EC solid;
+  color: #000;
+  transition: all 0.5s;
+      height: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .wrap p{
   margin-left: 30px;
 }
+.click p{
+  text-align:center;
+} 
 
 .login2{
   background: rgba(20, 20, 20, 0.9);
@@ -787,7 +877,7 @@ background-color: #000;
   height: auto;
   border-radius:15px;
   line-height: 30px;
-
+  position: relative;
 }
 
 .login-wrapper2 h2{
@@ -812,4 +902,28 @@ background-color: #000;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 20px;
+}
+
+.nmessage p{
+  font-family: '微軟正黑體';
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 60px;
+}
+
+.tuding1{
+  position: absolute;
+  width: 50px;
+  height: auto;
+  top: 0px;
+  left: 20px;
+}
+
+.tuding2{
+  position: absolute;
+  width: 50px;
+  height: auto;
+  right: 10px;
+  top: 0px;
 }

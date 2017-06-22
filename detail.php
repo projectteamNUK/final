@@ -33,7 +33,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title></title>
+	<title><?php echo $a?></title>
 	<link rel="stylesheet" href="css/travel_information.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<script src="js/forfun.js"></script>
@@ -63,10 +63,10 @@
 	<img id="back_to_top_pic" src="http://4.bp.blogspot.com/-b7Ev7YbY1yw/VdmyzHNe1FI/AAAAAAAAAIE/CMcNxhnaDoc/s200/ScrollToTop-ARSDK.png" alt=""><br>
 	</a>
 
-	<div class="top">
-		<img src="http://blog.asiayo.com/wp-content/uploads/2016/10/%E5%8D%97%E6%8A%95-1920x768.jpg" class="top_pic">
-		<div class="logo"><a href="index.php"><h1 class="title_word"><span class="title_word_forfun">否放</span>旅遊網<br>We Travel , Just <span class="title_word_forfun">For Fun.</span></h1></a></div>
-		<div class="title_li">
+			<div class="top">
+			<img src="http://blog.asiayo.com/wp-content/uploads/2016/10/%E5%8D%97%E6%8A%95-1920x768.jpg" class="top_pic">
+<div class="logo"><a href="index.php"><h1 class="title_word"><span class="title_word_forfun">否放</span>旅遊網<br>We Travel , Just <span class="title_word_forfun">For Fun.</span></h1></a></div>
+				<div class="title_li">
 					<ul id="menu">
 						<?php
 							session_start();
@@ -77,9 +77,10 @@
 								echo "<li><a href='#' id='login'>登入</a></li>";
 							}
 						?>
+						
 						<div class="login-background">
  						   <div class="login-wrapper">
- 						         <!-- <h2>會員登入 SIGN IN</h2>
+ 						         <h2>會員登入 SIGN IN</h2>
  						         <div class="normal_login">
  						         <form action="detail.php" method="POST">
  						         	<label>帳號</label>
@@ -101,19 +102,14 @@
 										<a href="https://www.facebook.com/dialog/oauth?client_id=288870768208521&redirect_uri=http://140.127.218.156/travel/fblogin.php&scope=public_profile,user_friends">
 											<p class="fb_login_word">FACEBOOK帳號登入</p>
 										</a></div>									
-								</div> -->
+								</div>
  						    </div>
 						</div>
-							<?php
-								if(isset($message)){
-									echo "<div>$message</div>";
-									header("Refresh: 2; url=detail.php");
-								}
-							?>
+
 						<li><a href="#" id="l">簡介</a></li>
 						<div class="login1">
  						   <div class="login-wrapper1">
- 						        <!-- <h2>值得你信任的旅遊網-否放旅遊網</h2>
+ 						        <h2>值得你信任的旅遊網-否放旅遊網</h2>
  						        <h3>成立理念</h3>
  						        <p>現今網路資訊發展越來越蓬勃，使用網路查詢資料已成為趨勢。
 有些人外出旅遊卻苦惱於沒有想法，渴望有完整且有系統性的行程安排，因此，創造一個豐富的旅遊交流平台的理念便間接產生了否放旅遊網。</p>
@@ -122,18 +118,17 @@
 除此之外，旅遊的內容豐富多元，上山下海的行程應有盡有，不管顧客想要享受山林間的芬多精抑或是渴望海風的吹拂，甚至是傾向於人文藝術的薰陶渲染，涉及多元化的行程方案讓顧客去做最多元的選擇。</p>
  						        <h3>顧客需求</h3>
  						        <p>除了本團隊所提供的旅遊行程規畫給顧客選擇以外，我們開放每個旅遊行程的留言板交流區，讓顧客可以針對每次的旅遊做評論交流，也可以讓顧客藉由此留言板去對每個方案做詢問。
-藉由這個留言板，我們可以去傾聽顧客的聲音，了解顧客對每次旅遊的看法理念及意見，吸收每個意見問題，當作養分去創造更高品質的旅遊方案。</p> -->
+藉由這個留言板，我們可以去傾聽顧客的聲音，了解顧客對每次旅遊的看法理念及意見，吸收每個意見問題，當作養分去創造更高品質的旅遊方案。</p>
    							</div>
  						</div>
-
-						<li><a href="#">旅遊資訊</a>
+ 						<li><a href="#">旅遊資訊</a>
 							<ul>
 								<li><a href="synopsis_n.php">北部</a></li>
 								<li><a href="synopsis_w.php">西部</a></li>
 								<li><a href="synopsis_e.php">東部</a></li>
 								<li><a href="synopsis_s.php">南部</a></li>
 							</ul>
-						</li>
+						</li>						
 						<li><a href="arrange.php">行程安排</a></li>
 						<!-- <li><a href="favorite.php">我的最愛</a></li>	 -->
 						<?php
@@ -143,37 +138,49 @@
 								echo "<li><a href='#'>聯絡我們</a></li>";
 							}
 						?>
+				<!-- 		<div class="login2">
+ 						   <div class="login-wrapper2">
+								<div class="click"><p>　發表意見　</p></div>
+								<div class="wrap">
+									<div class=happy>主旨：<input type="text" name="" ><br></div>
+									<div class=happy>意見內容：<textarea rows="15" cols="50" name="con1"></textarea></div><br>
+									<button type="submit" class="submit">提交</button>
+   								</div>
+ 							</div> -->
 					</ul>
-			<!-- <p class="header_right_bottom_content">About</p>
-			<p class="header_right_bottom_content">Trainings</p>
-			<p class="header_right_bottom_content">Timetable</p>
-			<p class="header_right_bottom_content">Nutrition</p>
-			<p class="header_right_bottom_content">Gallert</p>
-			<p class="header_right_bottom_content">Contracts</p> -->
-			<div class="clear"></div>	
-		</div>
-
-	</div>
+						<div class="clear"></div>	
+					</div>
+ 					</div>
 
 
 	<div class="wrapper">
 
 		<div class="travel_information">
+						<div class="user1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">
 			<div class="travel_pic">
 			<img src="<?php echo $g?>" alt="">
 			</div>
 			<div class="travel_word">
+
 				<h2><?php echo $a?></h2>
 				<p>出發日期：<?php echo $b?></p>
 				<p>結束日期：<?php echo $c?></p>
 				<p>交通方式：<?php echo $d?></p>
 				<p>旅遊行程：<?php echo $e?></p>
 				<p class="price">團費：<span><?php echo $f?>起</span></p>
+													<?php	
+								if($rs[11]!=null){
+									echo "<img src='images/love2.png' id='".$rs[0]."' class='fucklove' onclick=\"add_fav('".$rs[0]."')\"/>";
+								}else{
+									echo "<img src='images/love.png' id='".$rs[0]."' class='fucklove' onclick=\"add_fav('".$rs[0]."')\"/>";
+								}
+						?>
 			</div>
 
 		<div class="clear"></div>
 		</div>
-
 		<div class="travel_special">
 			<div class="travel_special_pic">
 				<img src="https://www.travel.com.tw/images/images2016/listBg.jpg" alt="">
@@ -212,14 +219,35 @@
 		</div>
 	
 	</div>
-
+</div>
 
 	<div class="footer">
 
 	<div class="footer_word"><p><br>For Fun旅遊網<br>拜託PHP讓我過<br>資料、圖片皆來自鳳凰旅行社<br>期末專題用<br>若造成任何人的不便<br>會立即撤下</p></div>
 
 	</div>
-		
+			<script type="text/javascript">
+	function add_fav(id){
+		if(window.XMLHttpRequest){
+            xmlhttp = new XMLHttpRequest();
+        }else{
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function(){
+	        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+	           	if(xmlhttp.responseText=="true"){
+                    alert("成功加入最愛!!");
+                    var imgID = '#'+id;
+                    $(imgID).attr("src", "images/love2.png")
+                }else{
+                    alert("已存在於你的最愛!!");
+	            }
+            }
+        };
+        xmlhttp.open("GET","add_fav.php?fav_id="+id,true);
+        xmlhttp.send();
+	}
+</script>
 	<script src="js/forfun.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </body>

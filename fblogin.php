@@ -18,6 +18,7 @@
     $info = json_decode($user_info);
     $tra_id = $info->id;
     $tra_name = $info->name;
+    $tra_email = $info->email;
 
 	if(!is_null($tra_id)){
 		require_once("db_config.php");

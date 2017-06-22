@@ -23,52 +23,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>歡迎使用臉書登入</title>
+	<link rel="stylesheet" href="css/fb_registered.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<script src="js/forfun.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<title>FOR FUN旅遊網</title>
-
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </head>
-<body>
-	<h4>歡迎使用Facebook登入</h4>
+<body background="\images\bg.png">
+	
+
+
+			<div class="wrapper">
+				
+				<!-- 搜尋錢顯示這段 -->
+				<div class="user1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">
+
+					<h1 class="welcome">歡迎使用FACEBOOK登入</h1>
+						<div class="arrangecontent">
+
 	<?php
 		$tra_id = $_SESSION["U_ID"];
 		$tra_name = $_SESSION["U_NAME"];
-		echo "<img class='responsive-img circle' src='https://graph.facebook.com/$tra_id/picture?type=large'>.<br>";
-		echo "$tra_name";
+		echo "<img class='responsive-img circle' src='https://graph.facebook.com/$tra_id/picture?type=large'><br>";
+		echo "<p class='username'>$tra_name</p>";
 	?>
 	<div>
-		<h5>加入會員</h5>
+		<h5 class="join_member">會員資料</h5>
 	</div>
 	<form action="fbreg.php" method="POST">
-			<div>
+		<div class="middle">	
+
+			<div class="member-information">
 			<label>名字</label>
 			<?php 
 				$name = $_SESSION["U_NAME"];
 				echo "<input id='uname' type='text' name='uname' value='$name' required>";
-			?>
+			?><br>
 			</div>
-			<div>
+			<div class="member-information">
 			<label>電話</label>
 			<?php 
 				echo "<input id='uphone' type='text' name='uphone' value='$phone' required>";
-			?>
+			?><br>
 			</div>
-			<div>
+			<div class="member-information">
 			<label>信箱</label>
 			<?php 
+				$email = $_SESSION["U_EMAIL"];
 				echo "<input id='uemail' type='text' name='uemail' value='$email' required>";
-			?>
+			?><br>
 			</div>
 
 			<div>
-				<button type="submit">送出</button>
+								  <button type="submit" class="alter-user-information-submit">送出</button>
 	<?php
 		if(isset($message)){
 			echo "<div>$message</div>";
 			header("Refresh: 2; url=index.php");
 		}
 	?>
+		</div>
+
 			</div><br/>
 	</form>
+													<div class="clear"></div>	
+						</div>
+
+				</div>
+					
+
+</div>
+
+			</div>
+
+
+
+
+
+	<div class="footer">
+		<div class="footer_word"><p><br>For Fun旅遊網<br>拜託PHP讓我過<br>資料、圖片皆來自鳳凰旅行社<br>	期末專題用<br>若造成任何人的不便<br>會立即撤下</p>
+		</div>
+	</div>
+	<script src="js/forfun.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </body>
-</html>
+</html>	

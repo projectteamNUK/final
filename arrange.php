@@ -33,7 +33,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title></title>
+	<title>行程安排</title>
 	<link rel="stylesheet" href="css/arrange.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<script src="js/forfun.js"></script>
@@ -120,18 +120,31 @@
 							session_start();
 							if (isset($_SESSION['U_ID'])){	
 								echo"<li><a href='member.php'>會員專區</a></li>";
-								echo "<li><a href='form.php'>聯絡我們</a></li>";
+								echo "<li><a href='' id='contact'>聯絡我們</a></li>";
 							}
 						?>
 						<div class="login2">
  						   <div class="login-wrapper2">
-								<div class="click"><p>　發表意見　</p></div>
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2"> 						   
+								<div class="click"><p>發表意見</p></div>
 								<div class="wrap">
-									<div class=happy>主旨：<input type="text" name="" ><br></div>
-									<div class=happy>意見內容：<textarea rows="15" cols="50" name="con1"></textarea></div><br>
-									<button type="submit" class="submit">提交</button>
-   								</div>
+									<form action="contact.php" method="POST">
+									        <div class="happy">意見類型：<select name="type" required="" id="type" class="fuck">
+									            <option value='旅遊諮詢'>旅遊諮詢</option>
+									            <option value='景點推薦'>景點推薦</option>
+									            <option value='服務品質'>服務品質</option>
+									            <option value='網站刊物'>網站刊物</option>
+									            <option value='其他'>其他</option>
+									        </select><br></div>
+										<div class=happy>主旨　　：<input type="text" name="title"><br></div>
+										<div class=happy>意見內容：<textarea  name="content" rows="15" cols="50" name="con1"></textarea></div><br>
+									   	<input type="hidden" name="page" value="0">
+										<button type="submit" class="submit">提交</button>
+										</form>
  							</div>
+ 							</div>
+ 						</div>
 					</ul>
 						<div class="clear"></div>	
 					</div>
@@ -153,7 +166,7 @@
 									$tra_name = $_SESSION["U_NAME"];
 									if (isset($_SESSION['U_ID'])) {
 										if (strlen($tra_id) < 15) {
-											echo "<img class='responsive-img circle' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwx3XFW6qZsaqCpetRzX8KD1iEaSVQ265aQGq4foXJ2pMHOvUTZw'><br>";
+											echo "<img src='picture/head.png' width='225px' height='225px'><br>";
 										}else{
 											echo "<img class='responsive-img circle' src='https://graph.facebook.com/$tra_id/picture?type=large'><br>";
 										}
@@ -164,7 +177,7 @@
 							</div>
 							<div class="select">
 						<form action="arrange.php" method="POST">
-							<label>地區</label>
+							<label>地區&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 							   	<select name="place" required="" id="place">
 									<option value="" disabled selected>地區</option>
 									<option value="東部">東部</option>
@@ -172,7 +185,7 @@
 									<option value="南部">南部</option>
 									<option value="北部">北部</option>
 								</select><br>
-							<label>交通方式</label>
+							<label>交通方式 </label>
 							   	<select name="traffic" required="" id="traffic">
 									<option value="" disabled selected>交通方式</option>
 									<option value="飛機">飛機</option>
@@ -183,7 +196,7 @@
 									<option value="遊覽車">遊覽車</option>
 									<option value="觀光巴士">觀光巴士</option>
 								</select><br>
-							<label>預算範圍</label>
+							<label>預算範圍 </label>
 							   	<select name="price" required="" id="price">
 									<option value="" disabled selected>預算範圍</option>
 									<option value="1">3,000以下</option>
@@ -213,7 +226,7 @@
 										$rs=mysqli_fetch_row($data);
 								?>		
 								<div class="travel_pic">
-									<a href=""><img src="<?php echo $rs[10]?>" alt=""></a>
+									<a href="detail.php?id=<?php echo $rs[0] ?>"><img src="<?php echo $rs[10]?>" alt=""></a>
 								</div>
 								<div class="travel_word">
 									<a href=""><h2><?php echo $rs[1]?></h2></a>
@@ -222,14 +235,25 @@
 									<p>交通方式：<?php echo $rs[5]?></p>
 									<p>旅遊行程：<?php echo $rs[6]?></p>
 									<p class="price">團費：<span><?php echo $rs[8]?>起</span></p>
+						<?php	
+								if($rs[11]!=null){
+									echo "<img src='images/love2.png' id='".$rs[0]."' class='fucklove' onclick=\"add_fav('".$rs[0]."')\"/>";
+								}else{
+									echo "<img src='images/love.png' id='".$rs[0]."' class='fucklove' onclick=\"add_fav('".$rs[0]."')\"/>";
+								}
+						?>									
 								</div>
 							<div class="clear"></div>
 								<?php 
 									}
-									}else{
+									}else{ 
+								?>
+							</div>
+							<div class="nmessage">
+								<p><?php
 										echo "$nmessage";
 									}
-								?>		
+									?></p>
 							</div>
 			</ul>
 </div>
@@ -244,6 +268,29 @@
 		<div class="footer_word"><p><br>For Fun旅遊網<br>拜託PHP讓我過<br>資料、圖片皆來自鳳凰旅行社<br>	期末專題用<br>若造成任何人的不便<br>會立即撤下</p>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+	function add_fav(id){
+		if(window.XMLHttpRequest){
+            xmlhttp = new XMLHttpRequest();
+        }else{
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function(){
+	        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+	           	if(xmlhttp.responseText=="true"){
+                    alert("成功加入最愛!!");
+                    var imgID = '#'+id;
+                    $(imgID).attr("src", "images/love2.png")
+                }else{
+                    alert("已存在於你的最愛!!");
+	            }
+            }
+        };
+        xmlhttp.open("GET","add_fav.php?fav_id="+id,true);
+        xmlhttp.send();
+	}
+</script>
 	<script src="js/forfun.js"></script>
 	<script src="https://code.jquery.com/jquery-3.1.0.js"></script> 
 </body>

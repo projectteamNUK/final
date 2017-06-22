@@ -47,7 +47,7 @@ table {
 }
 
 body{
- /*background-image:url( "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzmocAak9l-1rzpCBnXz2d8L-rhRaoOt7-lsfCiwaxpPDi2eSgYQ" )*/
+ background-image:url( "../images/bg.png" );
   font-family: '微軟正黑體';
 }
 
@@ -56,9 +56,9 @@ body{
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px dashed black;
+  /*border: 1px dashed black;*/
   padding: 5px;
-  background-color: white;
+  /*background-color: white;*/
 }
 
 .top{
@@ -145,8 +145,6 @@ body{
 .fb_login a{
   font-size: 20px;
   color: white;
-  width: 300px;
-  display: inline-block;
   right: 45px;
   top: 5px;
   width: 300px;
@@ -184,11 +182,16 @@ body{
   color: #fff;
   margin: 0 auto;
   border-radius: 7px;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 10px;
-  padding-top: 5px;
+  /*padding-top: 5px;*/
   padding-bottom: 5px;
+  font-size: 20px;
+  font-family: '微軟正黑體';
+  cursor:pointer;
 }
+
+
 
 .normal_login_buttom a{
   color: #fff;
@@ -205,9 +208,9 @@ body{
   color: #fff;
   margin: 0 auto;
   border-radius: 7px;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-bottom: 10px;
-  padding-top: 5px;
+  /*padding-top: 5px;*/
   padding-bottom: 5px;
   transition: all 0.5s;
 }
@@ -243,13 +246,16 @@ body{
 
 
 .normal_login{
-  border: 1px black solid;
+  border: 2px black solid;
   width: 400px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin: 0 auto;
   margin-bottom: 20px;
   margin-top: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
 }
 
 .normal_login p{
@@ -257,6 +263,13 @@ body{
   margin:0 auto;
 }
 
+.normal_login input{
+    border: 2px #91D04E solid;
+  border-radius: 5px;
+  height: 20px;
+  font-family: '微軟正黑體';
+  margin-bottom: 10px;
+}
 
 .login-wrapper{
   width: 500px;
@@ -268,6 +281,10 @@ body{
   z-index: 100;
   height: 300px;
   border-radius:15px;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;  
+  box-shadow:5px 5px 20px rgba(20%,20%,40%,0.5);
 
 }
 
@@ -293,6 +310,12 @@ body{
   height: auto;
   border-radius:15px;
   line-height: 30px;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;  
+  box-shadow:5px 5px 20px rgba(20%,20%,40%,0.5);
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .login-wrapper1 h2{
@@ -395,12 +418,33 @@ body{
 }
 
 .middle_ad{
-  width: 100%;
-  height: 415px;
+  width: 1070px;
+  height: 600px;
   margin: 0 auto;
-  margin-bottom: 300px;
-  margin-left: 120px;
+  margin-bottom: 100px;
+  /*margin-left: px;*/
+  box-shadow:5px 5px 20px rgba(20%,20%,40%,0.5);
+  padding-left: 130px;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  background: #fff;
+  position: relative;
+}
 
+.tuding1{
+  position: absolute;
+  width: 50px;
+  height: auto;
+  top: 0px;
+  left: 20px;
+}
+
+.tuding2{
+  position: absolute;
+  width: 50px;
+  height: auto;
+  right: 10px;
+  top: 0px;
 }
 
 .middle_ad_leftword{
@@ -434,6 +478,7 @@ a img {
   border: 1px solid #ccc;
   height: 505px;
   float: left;
+  /*margin: 0 auto;*/
 }
 #mostnew .info {
   display: none;
@@ -473,10 +518,16 @@ a img {
 }
 
 .recommend{
-  width: 1100px;
-  height: 459px;
-  margin-bottom: 200px;
-  margin-left: 45px;
+  width: 1150px;
+  height: 600px;
+  margin-bottom: 100px;
+  /*margin-left: 45px;*/
+  background: #fff;
+  box-shadow:5px 5px 20px rgba(20%,20%,40%,0.5);
+  /*padding-left: 100px;*/
+  padding-top: 50px;
+  padding-left: 50px;
+  position: relative; 
 }
 
 #back_to_top {
@@ -497,6 +548,7 @@ a img {
   width: 550px;
   height: 459px;
   float: left;
+  /*background: #fff;*/
 }
 
 .most_recommend img{
@@ -526,7 +578,7 @@ a img {
   }
   .most_recommend .caption {
     position: absolute;
-    top: 404px; /* .most_recommend 的高 - 想顯示 title 的高(這邊是設 55) */
+    top: 375px; /* .most_recommend 的高 - 想顯示 title 的高(這邊是設 55) */
     width: 490px; /* .most_recommend 的寬 - .caption 的左右 padding */
     padding: 15px 30px 20px;
     cursor: pointer;
@@ -665,9 +717,190 @@ a{
   color: #CCEEFF;
   font-size: 15px;
   text-align: center;
-  line-height: 40px;
+  line-height: 40p
 }
 
 
 
+.happy{
+  /*margin-left: 30px;*/
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: left;
+}
 
+.happy input{
+  border: 2px #91D04E solid;
+  border-radius: 5px;
+  font-family: '微軟正黑體';
+  height: 20px;
+  font-size:15px;
+}
+
+.happy textarea{
+  border: 2px #91D04E solid;
+  border-radius: 5px;
+  font-size:17px;
+  font-family: '微軟正黑體';
+}
+
+.fuck{
+  border: 2px #91D04E solid;
+  font-size: 15px;
+  font-family: '微軟正黑體';
+  border-radius: 5px;
+
+}
+
+.wrap{
+  border: 2px #FF5252 dashed;
+  width:540px;
+  height: auto;
+  margin: 0 auto;
+  padding-left: 60px;
+  margin-bottom: 30px;
+  padding-right: 60px;
+}
+
+.submit{
+  color: #fff;
+  margin-left: 350px;
+  margin-bottom: 30px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  border: 1px #FF5252 solid;
+  background-color: #FF5252;
+  font-family: '微軟正黑體';  
+  font-size: 20px;
+  border-radius: 5px;
+  cursor:pointer;
+}
+
+.submit:hover{
+  color: #000;
+  margin-left: 350px;
+  margin-bottom: 30px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  border: 1px #FFD9EC solid;
+  background-color: #FFD9EC;
+  font-family: '微軟正黑體';  
+  font-size: 20px;
+  border-radius: 5px;
+  cursor:pointer;
+  transition: all 0.5s;
+}
+
+.click{
+  width:140px;
+  margin: 0 auto;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  border-radius: 5px;
+  background-color: #FF5252;
+  font-family: '微軟正黑體';
+  border: 1px #FF5252 solid;
+  color: #fff;
+    height: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  cursor:pointer;
+
+}
+
+.click:hover{
+  width:140px;
+  margin: 0 auto;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  border-radius: 5px;
+  background-color: #FFD9EC;
+  font-family: '微軟正黑體';
+  border: 1px #FFD9EC solid;
+  color: #000;
+  transition: all 0.5s;
+      height: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.wrap p{
+  margin-left: 30px;
+}
+
+.login2{
+  background: rgba(20, 20, 20, 0.9);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 5;
+}
+
+.login2{
+  background: rgba(20, 20, 20, 0.9);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 5;
+}
+
+.login-wrapper2{
+  width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  border: 1px solid green;
+  background: #fff;
+  //display: none;
+  z-index: 100;
+  height: auto;
+  border-radius:15px;
+  line-height: 30px; 
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow:5px 5px 20px rgba(20%,20%,40%,0.5);
+  
+}
+
+.login-wrapper2 h2{
+  font-size: 40px;
+  margin-top: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.login-wrapper2 h3{
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+  margin-left: 20px;
+
+}
+
+.login-wrapper2 p{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+
+.tuding1{
+  position: absolute;
+  width: 50px;
+  height: auto;
+  top: 0px;
+  left: 20px;
+}
+
+.tuding2{
+  position: absolute;
+  width: 50px;
+  height: auto;
+  right: 10px;
+  top: 0px;
+}

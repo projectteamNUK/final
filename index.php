@@ -6,7 +6,7 @@
 		$arrange = "SELECT * FROM member WHERE member_email= '$id' and member_pwd='$pwd' ";
 		$res=mysqli_query($link, $arrange);
 		if (mysqli_num_rows($res)!=0){
-			$message = "登入成功!歡迎進入FOR FUN 旅遊網<br/>";
+
 			$set = mysqli_fetch_array($res, MYSQLI_ASSOC);
 			session_start();
 			$_SESSION['U_ID'] = $set['member_id'];
@@ -20,7 +20,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title></title>
+	<title>FOR FUN旅遊網</title>
 	<link rel="stylesheet" href="css/forfun.css">
 	 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	 		<script src="js/forfun.js"></script>
@@ -52,6 +52,8 @@
 						?>
 						<div class="login-background">
  						   <div class="login-wrapper">
+ 						   				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">
  						         <h2>會員登入 SIGN IN</h2>
  						         <div class="normal_login">
  						         <form action="index.php" method="POST">
@@ -71,7 +73,7 @@
 											<p>註冊</p>
 										</a></div>										
 									<div class="fb_login">
-										<a href="https://www.facebook.com/dialog/oauth?client_id=288870768208521&redirect_uri=http://140.127.218.156/travel/fblogin.php&scope=public_profile,user_friends">
+										<a href="https://www.facebook.com/dialog/oauth?client_id=288870768208521&redirect_uri=http://140.127.218.156/travel/fblogin.php&scope=public_profile,email">
 											<p class="fb_login_word">FACEBOOK帳號登入</p>
 										</a></div>									
 								</div>
@@ -80,12 +82,14 @@
 							<?php
 								if(isset($message)){
 									echo "<div>$message</div>";
-									header("Refresh: 2; url=index.php");
+									header("Refresh: 0.1; url=index.php");
 								}
 							?>
 						<li><a href="#" id="l">簡介</a></li>
 						<div class="login1">
  						   <div class="login-wrapper1">
+ 						   				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">
  						        <h2>值得你信任的旅遊網-否放旅遊網</h2>
  						        <h3>成立理念</h3>
  						        <p>現今網路資訊發展越來越蓬勃，使用網路查詢資料已成為趨勢。
@@ -113,19 +117,33 @@
 							session_start();
 							if (isset($_SESSION['U_ID'])){	
 								echo"<li><a href='member.php'>會員專區</a></li>";
-								echo "<li><a href='form.php'>聯絡我們</a></li>";
+								echo "<li><a href='#' id='contact'>聯絡我們</a></li>";
 							}
 						?>
+						<div class="login2">
+ 						   <div class="login-wrapper2">
+ 						   				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+				<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">
+								<div class="click"><p>發表意見</p></div>
+								<div class="wrap">
+									<form action="contact.php" method="POST">
+									        <div class="happy">意見類型：<select name="type" required="" id="type" class="fuck">
+									            <option value='旅遊諮詢'>旅遊諮詢</option>
+									            <option value='景點推薦'>景點推薦</option>
+									            <option value='服務品質'>服務品質</option>
+									            <option value='網站刊物'>網站刊物</option>
+									            <option value='其他'>其他</option>
+									        </select><br></div>
+										<div class=happy>主旨　　：<input type="text" required="" name="title"><br></div>
+										<div class=happy>意見內容：<textarea  name="content" required="" rows="15" cols="50" name="con1"></textarea></div><br>
+									   	<input type="hidden" name="page" value="0">
+										<button type="submit" class="submit">提交</button>
+										</form>
+ 							</div>
 					</ul>
-						<!-- <p class="header_right_bottom_content">About</p>
-						<p class="header_right_bottom_content">Trainings</p>
-						<p class="header_right_bottom_content">Timetable</p>
-						<p class="header_right_bottom_content">Nutrition</p>
-						<p class="header_right_bottom_content">Gallert</p>
-						<p class="header_right_bottom_content">Contracts</p> -->
 						<div class="clear"></div>	
 					</div>
-
+ 					</div>
 			</div>
 
 
@@ -138,6 +156,8 @@
 				
 		</div>
 	<div class="middle_ad">
+			<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+			<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">	
 		<div class="middle_ad_leftword"><p><span class="leftword_red">熱<br>門<br></span>景<br>點<br></p></div>
 			<div id="mostnew">
 
@@ -191,6 +211,8 @@
 					<div class="clear"></div>
 		</div>
 	<div class="recommend">
+			<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+			<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">		
 	<div class="middle_ad_leftword2"><p><span class="leftword_red">北部</span>推薦行程</p></div>
 		<?php
 		 	$get_sql = "SELECT travel.*, count(*) as times from travel, favorite where travel.travel_id = favorite.travel_id and travel_type = '北部' group by travel.travel_id order by times DESC limit 5";
@@ -234,6 +256,8 @@
 	</div>
 
 	<div class="recommend">
+			<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+			<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">		
 	<div class="middle_ad_leftword2"><p><span class="leftword_red">西部</span>推薦行程</p></div>
 		<?php
 		 	$get_sql = "SELECT travel.*, count(*) as times from travel, favorite where travel.travel_id = favorite.travel_id and travel_type = '西部' group by travel.travel_id order by times DESC limit 5";
@@ -277,6 +301,8 @@
 	</div>
 
 	<div class="recommend">
+			<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+			<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">		
 	<div class="middle_ad_leftword2"><p><span class="leftword_red">東部</span>推薦行程</p></div>
 		<?php
 		 	$get_sql = "SELECT travel.*, count(*) as times from travel, favorite where travel.travel_id = favorite.travel_id and travel_type = '東部' group by travel.travel_id order by times DESC limit 5";
@@ -320,6 +346,8 @@
 	</div>
 
 	<div class="recommend">
+			<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding1">
+			<img src="http://pic.pimg.tw/stephytruth/1309079219-c7c102fc171192181df4f58b06e14deb.png" alt="" class="tuding2">		
 	<div class="middle_ad_leftword2"><p><span class="leftword_red">南部</span>推薦行程</p></div>
 		<?php
 		 	$get_sql = "SELECT travel.*, count(*) as times from travel, favorite where travel.travel_id = favorite.travel_id and travel_type = '南部' group by travel.travel_id order by times DESC limit 5";

@@ -43,25 +43,6 @@
 				}
 		?>
 	</table>
-<script type="text/javascript">
-	function add_fav(id){
-		if(window.XMLHttpRequest){
-            xmlhttp = new XMLHttpRequest();
-        }else{
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange = function(){
-	        if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-	           	if(xmlhttp.responseText=="true"){
-                    alert("成功加入最愛!!");
-                }else{
-                    alert("已存在於你的最愛!!");
-	            }
-            }
-        };
-        xmlhttp.open("GET","add_fav.php?fav_id="+id,true);
-        xmlhttp.send();
-	}
 </script>
 </body>
 </html>

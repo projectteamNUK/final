@@ -1,0 +1,262 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600);
+@import url(https://fonts.googleapis.com/css?family=Cuprum:400,700);
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body{
+ background-image:url( "../images/bg.png" );
+  font-family: '微軟正黑體';
+}
+
+.add{
+  background-color: #0080FF;
+  font-family: '微軟正黑體';
+  border: 1px #0080FF solid;
+  color: #fff;
+  width: 300px;
+  height: 150px;
+  font-size: 50px;
+  margin-left: 200px;
+  /*margin-top: 20px;*/
+  border-radius: 5px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  /*text-align:center;*/
+  /*margin-bottom: 50px;*/
+  float: left;
+}
+
+
+.add:hover{
+  background-color: #FFD9EC  ;
+  font-family: '微軟正黑體';
+  border: 1px #FFD9EC solid;
+  color: #000;
+  width: 300px;
+  height: 150px;
+  font-size: 50px;
+  margin-left: 200px;
+  /*margin-top: 20px;*/
+  border-radius: 5px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  transition: all 0.5s;
+  cursor: pointer;
+  /*text-align:center;*/
+
+}
+
+
+.account_manage{
+  background-color:#0080FF;
+  font-family: '微軟正黑體';
+  border: 1px #0080FF solid;
+  color: #fff;
+  width: 300px;
+  height: 150px;
+  font-size: 50px;
+  margin-left: 140px;
+  margin-top: 29px;
+  border-radius: 5px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  /*text-align:center;*/
+  /*margin-bottom: 50px;*/
+  float: left;
+}
+
+
+.account_manage:hover{
+  background-color: #FFD9EC  ;
+  font-family: '微軟正黑體';
+  border: 1px #FFD9EC solid;
+  color: #000;
+  width: 300px;
+  height: 150px;
+  font-size: 50px;
+  margin-left: 140px;
+  margin-top: 29px;
+  border-radius: 5px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  transition: all 0.5s;
+  cursor: pointer;
+  /*text-align:center;*/
+
+}
+
+
+.message_manage{
+  background-color: #0080FF;
+  font-family: '微軟正黑體';
+  border: 1px #0080FF solid;
+  color: #fff;
+  width: 300px;
+  height: 150px;
+  font-size: 50px;
+  margin-left: 200px;
+  margin-top: 12px;
+  border-radius: 5px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  /*text-align:center;*/
+  /*margin-bottom: 50px;*/
+  float: left;
+}
+
+
+.message_manage:hover{
+  background-color: #FFD9EC  ;
+  font-family: '微軟正黑體';
+  border: 1px #FFD9EC solid;
+  color: #000;
+  width: 300px;
+  height: 150px;
+  font-size: 50px;
+  margin-left: 200px;
+  margin-top: 12px;
+  border-radius: 5px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  transition: all 0.5s;
+  cursor: pointer;
+  /*text-align:center;*/
+
+}
+
+.wrapper{
+  width: 1200px;
+  height: auto;
+  border: 3px #0080FF solid;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 100px; 
+  border-radius: 5px;
+  box-shadow:5px 5px 10px rgba(20%,20%,40%,0.5);
+  font-size: 20px;
+  padding: 30px;
+  position: relative;
+  padding-bottom: 80px;
+}
+
+.wrapper td{
+  border: 1px #0080FF solid; 
+  padding: 20px;
+  margin: 0 auto;
+  font-family: '微軟正黑體';  
+}
+
+.wrapper td select{
+  border: 1px #0080FF solid;
+  font-family: '微軟正黑體';  
+  font-size: 20px;  
+}
+
+.wrapper td input{
+  border: 1px #0080FF solid;
+  font-family: '微軟正黑體';  
+  font-size: 20px;
+}
+
+.wrapper td textarea{
+  border: 1px #0080FF solid;
+  font-family: '微軟正黑體';
+}
+
+.upload td{
+  width: 700px;
+  height: auto;
+  text-align: center;
+  font-size: 30px;
+  margin: 0 auto;
+  font-family: '微軟正黑體';
+}
+
+.upload {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.submit{
+  background-color: #0080FF;
+  font-family: '微軟正黑體';
+  border: 1px #0080FF solid;
+  color: #fff;
+  width: 70px;
+  height: 30px;
+  font-size: 20px;
+  margin-left: 150px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  position: absolute;
+  right: 120px;
+  bottom: 20px;
+}
+
+.submit:hover{
+  background-color: #FFD9EC  ;
+  font-family: '微軟正黑體';
+  border: 1px #FFD9EC solid;
+  color: #000;
+  width: 70px;
+  height: 30px;
+  font-size: 20px;
+  margin-left: 150px;
+  margin-top: 20px;
+  border-radius: 5px;
+  margin-right: 20px;
+  box-shadow:2px 2px 5px rgba(20%,20%,40%,0.5);
+  transition: all 0.5s;
+  cursor: pointer;
+  position: absolute;
+  right: 120px;
+  bottom: 20px;
+}
+
+
+
+.message{
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+}
